@@ -1,0 +1,17 @@
+1) after running program in the gdb, I got segemenation fault error.
+
+2) allocated memory for work.second in the process procedure. Now have 
+null in the output instead of value of work.second.
+
+3) changed memory allocation for work.second to main. 
+
+4) error when trying to compile: ‘for’ loop initial declarations are only
+allowed in C99 mode. Need to declare i before for loop.
+
+5) logic error in the first for loop. i<=strlen(work.first)+1 (do not need + 1). Found with valgrind.
+
+6) Had errors with memory allocation after running valgrind. 
+It was because wrong memory allocation. Need to allocate appropriate memory for work.second and temp.
+
+7) Issue: outputs "hello world" for work.first, because temp was pointing to the same memory as work.first.
+Need to give it another memory and just copy value of work.first
